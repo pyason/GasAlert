@@ -1,0 +1,60 @@
+{
+  "data": [
+    {
+      "created_at": "2022-05-03T17:35:07.000Z",
+      "id": "1521543891324964864",
+      "text": "\uD83D\uDD34 Gas in #Toronto and #GTA expected to increase 3 cents to 190.9 cents/litre on Wed, May. 4 (was 187.9 on Tue, May. 3)\n#gas #gtagas #torontogas #gasprices"
+    },
+    {
+      "created_at": "2022-05-02T14:50:05.000Z",
+      "id": "1521139973558353920",
+      "text": "\uD83D\uDD35 Gas in #Toronto and #GTA expected to stay the same price at 187.9 cents/litre on Tue, May. 3 (was 187.9 on Mon, May. 2)\n#gas #gtagas #torontogas #gasprices"
+    },
+    {
+      "created_at": "2022-05-01T19:40:05.000Z",
+      "id": "1520850565370195969",
+      "text": "\uD83D\uDD35 Gas in #Toronto and #GTA expected to stay the same price at 187.9 cents/litre on Mon, May. 2 (was 187.9 on Sun, May. 1)\n#gas #gtagas #torontogas #gasprices"
+    },
+    {
+      "created_at": "2022-04-30T20:40:05.000Z",
+      "id": "1520503277779042304",
+      "text": "\uD83D\uDFE2 Gas in #Toronto and #GTA expected to drop 1 cent to 187.9 cents/litre on Sun, May. 1 (was 188.9 on Sat, Apr. 30)\n#gas #gtagas #torontogas #gasprices"
+    },
+    {
+      "created_at": "2022-04-29T13:20:06.000Z",
+      "id": "1520030164775837696",
+      "text": "\uD83D\uDD34 Gas in #Toronto and #GTA expected to increase 2 cents to 188.9 cents/litre on Sat, Apr. 30 (was 186.9 on Fri, Apr. 29)\n#gas #gtagas #torontogas #gasprices"
+    },
+    {
+      "created_at": "2022-04-28T17:25:06.000Z",
+      "id": "1519729431526490115",
+      "text": "\uD83D\uDD34 Gas in #Toronto and #GTA expected to increase 4 cents to 186.9 cents/litre on Fri, Apr. 29 (was 182.9 on Thu, Apr. 28)\n#gas #gtagas #torontogas #gasprices"
+    },
+    {
+      "created_at": "2022-04-27T12:55:04.000Z",
+      "id": "1519299087996272646",
+      "text": "\uD83D\uDD35 Gas in #Toronto and #GTA expected to be 182.9 cents/litre on Thu, Apr. 28\n#gas #gtagas #torontogas #gasprices"
+    },
+    {
+      "created_at": "2022-04-25T12:20:05.000Z",
+      "id": "1518565510199267328",
+      "text": "\uD83D\uDD35 Gas in #Toronto and #GTA expected to stay the same price at 181.9 cents/litre on Tue, Apr. 26 (was 181.9 on Mon, Apr. 25)\n#gas #gtagas #torontogas #gasprices"
+    },
+    {
+      "created_at": "2022-04-24T15:55:04.000Z",
+      "id": "1518257224556191747",
+      "text": "\uD83D\uDD35 Gas in #Toronto and #GTA expected to stay the same price at 181.9 cents/litre on Mon, Apr. 25 (was 181.9 on Sun, Apr. 24)\n#gas #gtagas #torontogas #gasprices"
+    },
+    {
+      "created_at": "2022-04-23T13:50:07.000Z",
+      "id": "1517863388998737921",
+      "text": "\uD83D\uDD34 Gas in #Toronto and #GTA expected to increase 1 cent to 181.9 cents/litre on Sun, Apr. 24 (was 180.9 on Sat, Apr. 23)\n#gas #gtagas #torontogas #gasprices"
+    }
+  ],
+  "meta": {
+    "next_token": "7140dibdnow9c7btw420z41h10t3q4okkh26nf7jee3ap",
+    "result_count": 10,
+    "newest_id": "1521543891324964864",
+    "oldest_id": "1517863388998737921"
+  }
+}
