@@ -6,6 +6,6 @@ import sys
 
 try:
     twitterRes = requestTwitter()
-    print('Get back from calling twitterRequest', twitterRes)
+    print('[DEBUG] Get response from calling twitterRequest: ', twitterRes)
 except:
-    print("Calling module exception")
+    print("[ERROR] Calling module exception", sys.exc_info())

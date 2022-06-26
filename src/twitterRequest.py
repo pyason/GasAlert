@@ -20,11 +20,12 @@ def requestTwitter():
         jsonRes = r.json()
 
         if statCode >= 200 and statCode < 299 and not("errors" in jsonRes):
-            print('Get tweet details successful')
-            # print(jsonRes["data"][0]["text"][:1])
+            print('[INFO] Get tweet details successful')
             return jsonRes
-        else: print("Twitter API returned " + str(statCode) + " error: ", r.text)
+        else: 
+            print("[DEBUG] Non 2XX response received: ", r.text)
+            r.raise_for_status()
     except ConnectionError as err:
-        print("Twitter API Connection error: ", err)
+        print("[ERROR] Twitter API Connection error: ", err)
     except:
-        print("Other Twitter API error occurred: ", sys.exc_info())
+        print("[ERROR] Error while calling Twitter API: ", sys.exc_info())
