@@ -1,11 +1,12 @@
-#Use redmail and ms outlook account to send email
+## This module Use redmail and gmail account to send email
+
 import os
 import sys
 from dotenv import load_dotenv
 
 from redmail import gmail
 
-def sendEmail():
+def sendEmail(emailMsg):
     load_dotenv()
     pwd = os.getenv('GMAIL_APP_PWD')
 
@@ -15,9 +16,9 @@ def sendEmail():
     try:
         # Send to mail!
         gmail.send(
-            subject="Test email from ima gmail from GasAlert",
+            subject="GasAlert",
             receivers=['paul.yason@gmail.com'],
-            text="Yo, this is sent from a new gmail account!"
+            text=emailMsg
         )
         print("[INFO] Email sent successful")
     except:
