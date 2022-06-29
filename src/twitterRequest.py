@@ -14,6 +14,7 @@ def requestTwitter():
     url="https://api.twitter.com/2/users/317436248/tweets?tweet.fields=created_at,text"
 
     try:
+        print("[INFO] Start getting tweets")
         headers = {"Authorization": "Bearer " + bearer_token}
         r = requests.get(url, headers=headers)
         statCode = r.status_code

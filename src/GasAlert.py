@@ -1,8 +1,7 @@
 # This is the GasAlert app to create and send alerts when gas price alert for GTA is issued in twitter
 
-import os
 import sys
-from datetime import date, datetime
+from datetime import date
 from emailClient import sendEmail
 from twitterRequest import requestTwitter
 from emailClient import sendEmail
@@ -33,12 +32,15 @@ def findTodaysUpdate(tweets):
 
     return isUpdatedToday, emailContent
 
-try:
-    twitterRes = requestTwitter()
-    # print('[DEBUG] Get response from calling twitterRequest: ', twitterRes)
-    isUpdatedToday, emailContent = findTodaysUpdate(twitterRes)
-    if isUpdatedToday:
-        print("[INFO] Gas price changed, sending email")
-        sendEmail(emailContent)
-except:
-    print("[ERROR] Calling module exception", sys.exc_info())
+
+def lambda_handler(event, context):
+    print("[INFO] Event handler received event")
+    try:
+        twitterRes = requestTwitter()
+        # print('[DEBUG] Get response from calling twitterRequest: ', twitterRes)
+        isUpdatedToday, emailContent = findTodaysUpdate(twitterRes)
+        if isUpdatedToday:
+            print("[INFO] Gas price changed, sending email")
+            sendEmail(emailContent)
+    except:
+        print("[ERROR] Calling module exception", sys.exc_info())
