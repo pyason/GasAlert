@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 from redmail import gmail
 
-def sendEmail(emailMsg):
+def sendEmail(emailContent):
     load_dotenv()
     pwd = os.getenv('GMAIL_APP_PWD')
 
@@ -16,9 +16,9 @@ def sendEmail(emailMsg):
     try:
         # Send to mail!
         gmail.send(
-            subject="GasAlert",
+            subject=emailContent["title"],
             receivers=['paul.yason@gmail.com'],
-            text=emailMsg
+            text=emailContent["message"]
         )
         print("[INFO] Email sent successful")
     except:
