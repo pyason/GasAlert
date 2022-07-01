@@ -4,6 +4,7 @@ import os
 from dotenv import load_dotenv
 import sys
 import requests
+import logger
 
 def requestTwitter():
 
@@ -14,19 +15,21 @@ def requestTwitter():
     url="https://api.twitter.com/2/users/317436248/tweets?tweet.fields=created_at,text"
 
     try:
-        print("[INFO] Start getting tweets")
+        logger.info("Start getting tweets")
         headers = {"Authorization": "Bearer " + bearer_token}
         r = requests.get(url, headers=headers)
         statCode = r.status_code
         jsonRes = r.json()
 
         if statCode >= 200 and statCode < 299 and not("errors" in jsonRes):
-            print('[INFO] Get tweet details successful')
+            logger.info('Get tweet details successful')
             return jsonRes
         else: 
-            print("[DEBUG] Non 2XX response received: ", r.text)
+            logger.debug("Non 2XX response received: ", r.text)
             r.raise_for_status()
     except ConnectionError as err:
-        print("[ERROR] Twitter API Connection error: ", err)
+        logger.error("Twitter API Connection error: ", err)
+        raise Exception(err)
     except:
-        print("[ERROR] Error while calling Twitter API: ", sys.exc_info())
+        logger.error("Error while calling Twitter API: ", sys.exc_info())
+        raise Exception(sys.exc_info())

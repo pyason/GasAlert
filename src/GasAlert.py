@@ -5,6 +5,7 @@ from datetime import date
 from emailClient import sendEmail
 from twitterRequest import requestTwitter
 from emailClient import sendEmail
+import logger
 
 def findTodaysUpdate(tweets):
     isUpdatedToday = False
@@ -13,7 +14,7 @@ def findTodaysUpdate(tweets):
         "message": ""
     }
     firstTweet = tweets["data"][0]
-    print("[DEBUG] First tweet is: ", firstTweet)
+    logger.debug("First tweet is: ", firstTweet)
     createdAt = firstTweet["created_at"]
     tweet = firstTweet["text"]
     tweet = tweet[:tweet.find("\n")]
@@ -40,7 +41,8 @@ def lambda_handler(event, context):
         # print('[DEBUG] Get response from calling twitterRequest: ', twitterRes)
         isUpdatedToday, emailContent = findTodaysUpdate(twitterRes)
         if isUpdatedToday:
-            print("[INFO] Gas price changed, sending email")
+            logger.info("Gas price changed, sending email")
             sendEmail(emailContent)
+        else: logger.info("No change in today's gas price")
     except:
-        print("[ERROR] Calling module exception", sys.exc_info())
+        logger.error("Calling module exception: ", sys.exc_info())

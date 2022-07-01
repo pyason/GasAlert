@@ -3,6 +3,7 @@
 import os
 import sys
 from dotenv import load_dotenv
+import logger
 
 from redmail import gmail
 
@@ -20,6 +21,7 @@ def sendEmail(emailContent):
             receivers=['paul.yason@gmail.com'],
             text=emailContent["message"]
         )
-        print("[INFO] Email sent successful")
+        logger.info("Email sent successful")
     except:
-        print("[ERROR] Error while trying to send email: ", sys.exc_info())
+        logger.error("Error while trying to send email: ", sys.exc_info())
+        raise Exception(sys.exc_info())
