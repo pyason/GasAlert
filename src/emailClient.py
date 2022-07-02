@@ -14,6 +14,7 @@ def sendEmail(emailContent):
     gmail.username = 'imaurmuthr@gmail.com'
     gmail.password = pwd
 
+    logger.verboseDebug("Email Content: ", emailContent)
     try:
         # Send to mail!
         gmail.send(

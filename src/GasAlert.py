@@ -20,6 +20,7 @@ def findTodaysUpdate(tweets):
     tweet = tweet[:tweet.find("\n")]
     isoCreatedAt = date.fromisoformat(createdAt[:createdAt.find("T")])
     today = date.today()
+    logger.verboseDebug("Date converted and captured in tweet : ", isoCreatedAt, createdAt)
 
     if isoCreatedAt == today:
         if tweet.find("increase") != -1:
@@ -38,7 +39,7 @@ def lambda_handler(event, context):
     print("[INFO] Event handler received event")
     try:
         twitterRes = requestTwitter()
-        # print('[DEBUG] Get response from calling twitterRequest: ', twitterRes)
+        logger.verboseDebug("Get response from calling twitterRequest: ", twitterRes)
         isUpdatedToday, emailContent = findTodaysUpdate(twitterRes)
         if isUpdatedToday:
             logger.info("Gas price changed, sending email")
