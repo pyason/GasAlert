@@ -1,7 +1,7 @@
 # This is the GasAlert app to create and send alerts when gas price alert for GTA is issued in twitter
 
 import sys
-from datetime import date
+from datetime import date, timedelta
 from emailClient import sendEmail
 from twitterRequest import requestTwitter
 from emailClient import sendEmail
@@ -28,13 +28,13 @@ def findTodaysUpdate(tweets, eventTime):
     today = date.today()
 
     if isoCreatedAt == today and (eventTimeHour <= 16 or createdAtHour > 16):
-        logger.verboseDebug("Inside extracting tweet", "")
+        logger.verboseDebug("Time conditions met, inside extracting tweet", "")
         if tweet.find("increase") != -1:
-            emailContent["title"] += tweet[0:1] + " Gas price increase @" + str(today)
+            emailContent["title"] += tweet[0:1] + " Gas price increase @" + str(today + timedelta(days=1))
             emailContent["message"] = tweet
             isUpdatedToday = True
         elif tweet.find("drop") != -1:
-            emailContent["title"] += tweet[0:1] + " Gas price drop @" + str(today)
+            emailContent["title"] += tweet[0:1] + " Gas price drop @" + str(today + timedelta(days=1))
             emailContent["message"] = tweet
             isUpdatedToday = True
 
